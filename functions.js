@@ -36,3 +36,17 @@ function printDetails1(person) {
 
 const message = printDetails1({ name: 'Raphael', age: '24' });
 console.log(message)
+
+//guard clausing
+function printDetails(person) {
+  if (!person.name) { return 'you forgot the name' }
+
+  const age = (person.age ? person.age : 0)
+  const country = (person.country ? person.country : 'Ghana')
+
+  return `Hello ${ person.name } from ${ country } with age ${ age } years`;
+  console.log('You made it here boss!!!')
+}
+
+const message = printDetails({ age: '29' });
+console.log(message)
